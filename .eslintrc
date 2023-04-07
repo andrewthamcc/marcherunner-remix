@@ -22,7 +22,6 @@
     "react/jsx-fragments": [1, "syntax"],
     "react/jsx-no-useless-fragment": 1,
     "react/self-closing-comp": 1,
-    "react/jsx-sort-props": 1,
     "react/hook-use-state": 1,
     "import/export": 1,
     "import/first": 1,

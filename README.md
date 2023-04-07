@@ -1,34 +1,24 @@
-# Welcome to Remix!
+# MarcheRunner 2.1
 
-- [Remix Docs](https://remix.run/docs)
+A web application to help with weekly shopping trips
 
-## Deployment
+## Description
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+A simple listing application where users are able to login and create a list of items to be purchased
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+## Functionality
 
-```sh
-npm i -g vercel
-vercel
-```
+- Users can login via Auth0 with social signin
+- Users can create items to add to their list
+- The list is viewable by category and has the ability to be searched
+- Items can be created, marked as purchased, and deleted via GraphQL Mutations
+- Items can be mass deleted either deleting all items or only purchased items via REST requests
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+## Build
+- React, TypeScript, Remix, Tailwind, Storybook, Prisma, Auth0
 
-## Development
+### Tooling
+- Docker utilized for local development database instance
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
-
-```sh
-npm install
-```
-
-Afterwards, start the Remix development server like so:
-
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+### Deployment
+- Vercel
