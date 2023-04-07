@@ -1,0 +1,15 @@
+version: '3.7'
+services:
+    db:
+        build: ./postgres
+        container_name: marcherunner_db
+        restart: always
+        environment:
+            - POSTGRES_HOST_AUTH_METHOD=trust
+        ports:
+            - 5432:5432
+        volumes:
+            - db:/var/lib/postgresql/data
+volumes:
+    db:
+        driver: local

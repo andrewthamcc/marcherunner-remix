@@ -1,0 +1,32 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "@remix-run/eslint-config",
+    "@remix-run/eslint-config/node",
+    "plugin:import/errors",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": ["prettier"],
+  "settings": {
+    "react": "detect"
+  },
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "react/destructuring-assignment": 1,
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/jsx-fragments": [1, "syntax"],
+    "react/jsx-no-useless-fragment": 1,
+    "react/self-closing-comp": 1,
+    "react/jsx-sort-props": 1,
+    "react/hook-use-state": 1,
+    "import/export": 1,
+    "import/first": 1,
+    "import/no-named-as-default": 0,
+    "import/order": 1
+  }
+}
