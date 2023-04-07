@@ -3,7 +3,7 @@ import dotenv from 'dotenv'
 import { PrismaClient } from '@prisma/client'
 dotenv.config({ path: path.resolve('./.env') })
 
-let db: PrismaClient
+let prisma: PrismaClient
 
 declare global {
   var __db: PrismaClient | undefined
@@ -19,7 +19,7 @@ const url =
 // the server with every change, but we want to make sure we don't
 // create a new connection to the DB with every change either.
 if (process.env.NODE_ENV === 'production') {
-  db = new PrismaClient({
+  prisma = new PrismaClient({
     datasources: {
       db: {
         url,
@@ -36,7 +36,7 @@ if (process.env.NODE_ENV === 'production') {
       },
     })
   }
-  db = global.__db
+  prisma = global.__db
 }
 
-export { db }
+export { prisma }
