@@ -1,10 +1,11 @@
 import type { PropsWithChildren } from 'react'
+import clsx from 'clsx'
 
 export interface ButtonProps {
   a11ylabel?: string
   border?: boolean
-  className?: string // passthrough for className
-  color?: 'green'
+  className?: string
+  color?: 'green' | 'orange'
   disabled?: boolean
   label: string
   plain?: boolean
@@ -28,10 +29,22 @@ export const Button = ({
 }: ButtonProps & PropsWithChildren) => {
   const calcWidth = children ? 'auto' : `${width}px`
 
+  const buttonStyles = clsx(
+    plain
+      ? 'bg-transparent border-transparent hover:bg-transparent active:bg-transparent !text-black'
+      : 'text-white',
+    color === 'green' &&
+      'bg-runnerGreen hover:bg-runnerGreen-light active:bg-runnerGreen-dark',
+    color === 'orange' &&
+      'bg-runnerOrange hover:bg-runnerOrange-light active:bg-runnerOrange-dark',
+    !border && 'border-2 border-slate-700',
+    disabled && '!bg-gray-400'
+  )
+
   return (
     <button
       aria-label={a11ylabel}
-      className={`${className} bg-runner-green`}
+      className={`${className} ${buttonStyles} px-8 py-1 rounded-full focus:outline-none ease-in duration-200`}
       disabled={disabled}
       name={label}
       onClick={onClick}
@@ -39,7 +52,7 @@ export const Button = ({
       type={type}
     >
       {children}
-      <span className={`button-text ${children ? 'none' : ''}`}>{label}</span>
+      <span className={`text-sm ${children && 'hidden'}`}>{label}</span>
     </button>
   )
 }

@@ -1,14 +1,13 @@
-import React from 'react'
 import { Text } from '../../components'
 
 export const Footer = () => {
   return (
-    <footer className="bg-runner-green font-white p-2 flex items-center">
-      <div className="flex items-center justify-between">
-        <Text color="white" span variant="body-copy-small">
+    <footer className="bg-runnerGreen font-white p-2 flex items-center">
+      <div className="flex items-center justify-between container">
+        <Text color="white" span variant="body-copy-xsmall">
           © {new Date().getFullYear()} MarchéRunner
         </Text>
-        <Text color="white" span variant="body-copy-small">
+        <Text color="white" span variant="body-copy-xsmall">
           by{' '}
           <a
             className="font-white hover:underline"
