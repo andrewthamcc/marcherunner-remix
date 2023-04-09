@@ -15,9 +15,11 @@ export const action = async ({ request }: ActionArgs) => {
 export default function Index() {
   return (
     <Layout>
-      <section className="bg-hero bg-cover bg-center bg-no-repeat h-[65vh]">
+      <section className="bg-hero bg-cover bg-center bg-no-repeat h-[50vh] lg:h-[65vh]">
         <div className="container py-10">
-          <h1 className="text-6xl italic text-white my-6">MarchéRunner</h1>
+          <h1 className="lg:text-6xl text-5xl italic text-white my-6">
+            MarchéRunner
+          </h1>
           <Text className="leading-8" color="white" variant="body-copy">
             MarchéRunner is a web application for helping with your grocery
             runs.
@@ -37,7 +39,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="container flex py-10">
+      <section className="container lg:flex py-10">
         <div>
           <h3 className="font-bold italic text-4xl mb-10">How it works...</h3>
           <Text className="leading-8" variant="body-copy">
@@ -58,7 +60,7 @@ export default function Index() {
       <section className="container py-10">
         <h3 className="font-bold italic text-4xl">Get running....</h3>
 
-        <div className="flex items-center justify-center gap-4 py-10">
+        <div className="flex flex-col lg:flex-row items-center justify-center gap-4 py-10">
           <div className="flex flex-col gap-2 items-center justify-center">
             <svg
               viewBox="0 0 24 24"

@@ -56,7 +56,7 @@ export const ShoppingList = ({ items, categories }: ShoppingListProps) => {
       {isSearched && <SearchedList items={searchedItems} />} */}
 
       {!isFiltered && !isSearched && (
-        <div className="grid grid-cols-3 gap-x-8 gap-y-20">
+        <div className="grid lg:grid-cols-3 lg:gap-x-8 gap-y-20 py-4">
           {categories
             .filter(
               (c) => c.categoryName !== 'all' && c.categoryName !== 'list'

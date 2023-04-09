@@ -47,7 +47,7 @@ export const ShoppingListControls = ({
   }, [])
 
   return (
-    <div className="flex items-center justify-between py-8">
+    <div className="flex items-center justify-between mt-8">
       {/* <div className="shopping-list-controls-search-container">
         <SearchInput
           className="shopping-list-controls-search"
