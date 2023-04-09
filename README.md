@@ -1,6 +1,6 @@
 # MarcheRunner 2.1
 
-A web application to help with weekly shopping trips
+A web application to help with weekly shopping trips - built with Remix
 
 ## Description
 
@@ -10,9 +10,7 @@ A simple listing application where users are able to login and create a list of 
 
 - Users can login via Auth0 with social signin
 - Users can create items to add to their list
-- The list is viewable by category and has the ability to be searched
-- Items can be created, marked as purchased, and deleted via GraphQL Mutations
-- Items can be mass deleted either deleting all items or only purchased items via REST requests
+- Items can be mass deleted either deleting all items or only purchased items
 
 ## Build
 - React, TypeScript, Remix, Tailwind, Storybook, Prisma, Auth0

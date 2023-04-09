@@ -17,7 +17,7 @@ export const CategoryList = ({
   const isEmptyStyle = clsx(isEmpty && 'order-last')
 
   return (
-    <div className={`p-2 ${isEmptyStyle}`}>
+    <div className={`p2 ${isEmptyStyle}`}>
       <CategoryControls category={category} />
       <hr />
       {!items.length ? (
@@ -25,7 +25,7 @@ export const CategoryList = ({
           Nothing here...
         </Text>
       ) : (
-        <ul>
+        <ul className="mt-2">
           {items.map((i) => (
             <CategoryItem item={i} key={i.id} />
           ))}

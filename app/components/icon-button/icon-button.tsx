@@ -2,6 +2,7 @@ import React from 'react'
 import type { IconVariants } from '../icon'
 import { Icon } from '../icon'
 import { Button } from '../button'
+import clsx from 'clsx'
 
 export interface IconButtonProps {
   a11ylabel: string
@@ -10,6 +11,7 @@ export interface IconButtonProps {
   disabled?: boolean
   icon: IconVariants
   onClick?: () => void
+  size?: 'small' | 'medium' | 'large'
   submit?: boolean
 }
 
@@ -19,24 +21,27 @@ export const IconButton = ({
   disabled = false,
   icon,
   onClick,
+  size = 'medium',
   submit = false,
-}: IconButtonProps) => {
-  return (
-    <Button
-      aria-label={a11ylabel}
-      label={a11ylabel}
-      disabled={disabled}
-      onClick={onClick}
-      type={submit ? 'submit' : 'button'}
-      plain
-    >
-      {icon && (
-        <Icon
-          className="w-6 h-6"
-          color={disabled ? 'gray' : color}
-          icon={icon}
-        />
-      )}
-    </Button>
-  )
-}
+}: IconButtonProps) => (
+  <Button
+    aria-label={a11ylabel}
+    label={a11ylabel}
+    disabled={disabled}
+    onClick={onClick}
+    type={submit ? 'submit' : 'button'}
+    plain
+  >
+    {icon && (
+      <Icon
+        className={clsx(
+          size === 'small' && 'w-4 h-4',
+          size === 'medium' && 'w-6 h-6',
+          size === 'large' && 'w-10 h-10'
+        )}
+        color={disabled ? 'gray' : color}
+        icon={icon}
+      />
+    )}
+  </Button>
+)

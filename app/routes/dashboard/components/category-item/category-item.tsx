@@ -10,7 +10,8 @@ interface CategoryItemProps {
 export const CategoryItem = ({ item }: CategoryItemProps) => {
   const fetcher = useFetcher()
   const isDeleting = fetcher?.submission?.method === 'DELETE'
-  const isUpdating = fetcher?.submission?.method === 'PUT'
+  const isUpdating =
+    fetcher?.submission?.method === 'PUT' && fetcher.state === 'submitting'
 
   return (
     <li
@@ -22,9 +23,10 @@ export const CategoryItem = ({ item }: CategoryItemProps) => {
         checked={item.purchased}
         id={item.id}
         label={item.name}
+        loading={isUpdating}
         name={item.id}
         onChange={() =>
-          fetcher.submit({ action: `/item/${item.id}`, method: 'PUT' })
+          fetcher.submit(null, { action: `/item/${item.id}`, method: 'PUT' })
         }
       />
       <fetcher.Form action={`/item/${item.id}`} method="DELETE">
@@ -32,6 +34,7 @@ export const CategoryItem = ({ item }: CategoryItemProps) => {
           a11ylabel="Delete Item"
           className="category-item-delete"
           icon="trash"
+          size="small"
           submit
         />
       </fetcher.Form>

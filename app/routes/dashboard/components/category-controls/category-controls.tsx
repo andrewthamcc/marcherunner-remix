@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import type { ElementRef } from 'react'
 import { useFetcher } from '@remix-run/react'
 import {
@@ -8,6 +8,7 @@ import {
   Symbol,
   TextInput,
   Text,
+  LoadingSpinner,
 } from '../../../../components'
 import type { CategoryVariants } from '../../../../components'
 import type { Category } from '../../types'
@@ -23,8 +24,14 @@ export const CategoryControls = ({ category }: Props) => {
   const [isEditing, setIsEditing] = useState(false)
   const [itemName, setItemName] = useState('')
   const itemInput = useRef<InputHandle>(null)
+  const formRef = useRef<HTMLFormElement | null>(null)
 
   const fetcher = useFetcher()
+
+  const isAdding = fetcher.state === 'submitting'
+  useEffect(() => {
+    if (isAdding) setItemName('')
+  }, [isAdding])
 
   return (
     <div className="py-2">
@@ -51,6 +58,7 @@ export const CategoryControls = ({ category }: Props) => {
           className="flex items-center gap-2"
           action="/item/create"
           method="post"
+          ref={formRef}
         >
           <CategoryIcon
             className="h-8 w-8"
@@ -68,18 +76,22 @@ export const CategoryControls = ({ category }: Props) => {
             ref={itemInput}
             value={itemName}
           />
-          <Button
-            a11ylabel="add item"
-            disabled={!itemName}
-            label="add item"
-            type="submit"
-            plain
-          >
-            <Symbol
-              className="w-5 h-5"
-              symbol={itemName ? 'add green' : 'add disabled'}
-            />
-          </Button>
+          {fetcher.state === 'submitting' ? (
+            <LoadingSpinner variant="small" />
+          ) : (
+            <Button
+              a11ylabel="add item"
+              disabled={!itemName}
+              label="add item"
+              type="submit"
+              plain
+            >
+              <Symbol
+                className="w-5 h-5"
+                symbol={itemName ? 'add green' : 'add disabled'}
+              />
+            </Button>
+          )}
 
           <IconButton
             a11ylabel="clear"

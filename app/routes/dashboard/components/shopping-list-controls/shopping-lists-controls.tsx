@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Form, useFetcher } from '@remix-run/react'
+import { useFetcher } from '@remix-run/react'
 import {
   CategoryIcon,
   Dropdown,
@@ -77,17 +77,14 @@ export const ShoppingListControls = ({
         )} */}
 
         <div className="flex items-center gap-2">
-          <fetcher.Form
-            className="flex items-center"
-            action="/clear/purchased"
-            method="post"
-          >
+          <fetcher.Form action="/clear/purchased" method="post">
             <IconButton
               a11ylabel="delete purchased items"
               color="green"
               disabled={!hasPurchasedItems}
               icon="checkout cart"
               submit
+              size="large"
             />
           </fetcher.Form>
 
@@ -98,6 +95,7 @@ export const ShoppingListControls = ({
               disabled={!hasItems}
               icon="clear cart"
               submit
+              size="large"
             />
           </fetcher.Form>
         </div>

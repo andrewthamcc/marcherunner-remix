@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import AddDisabled from './symbols/add-disabled'
 import AddGreen from './symbols/add-green'
 import AddOrange from './symbols/add-orange'
@@ -39,10 +40,17 @@ const symbolVariants: Record<SymbolVariants, JSX.Element> = {
 export interface SymbolProps {
   className?: string // passthrough for className
   symbol: SymbolVariants // symbol
+  size?: 'small' | 'medium' | 'large'
 }
 
-export const Symbol = ({ className, symbol }: SymbolProps) => {
-  const SVG = symbolVariants[symbol]
-
-  return <div className={`${className ? className : ''} h-6 w-6`}>{SVG}</div>
-}
+export const Symbol = ({ className, size = 'medium', symbol }: SymbolProps) => (
+  <div
+    className={`${className ? className : ''} ${clsx(
+      size === 'small' && 'h-3.5 w-3.5',
+      size === 'medium' && 'h-6 w-6',
+      size === 'medium' && 'h-6 w-6'
+    )}`}
+  >
+    {symbolVariants[symbol]}
+  </div>
+)
