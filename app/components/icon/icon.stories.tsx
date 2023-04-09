@@ -7,7 +7,7 @@ const meta: Meta<typeof Icon> = {
 }
 export default meta
 
-export const icons: React.FC = () => {
+export const icons = () => {
   return (
     <div
       style={{

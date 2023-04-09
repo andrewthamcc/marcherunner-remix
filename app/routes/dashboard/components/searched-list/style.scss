@@ -1,0 +1,25 @@
+.searched-items {
+  padding: 4rem 0;
+  height: 55px;
+
+  &-header {
+    display: flex;
+    align-items: center;
+    height: 55px;
+    flex-grow: 1;
+  }
+
+  &-title {
+    flex-grow: 1;
+    font-weight: 600;
+  }
+
+  &-icon {
+    margin-right: 1rem;
+
+    svg {
+      height: 30px;
+      width: 30px;
+    }
+  }
+}

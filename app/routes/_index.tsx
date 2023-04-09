@@ -1,19 +1,13 @@
-import type { ActionArgs, LoaderArgs, V2_MetaFunction } from '@remix-run/node'
-import { redirect } from '@remix-run/node'
+import type { ActionArgs, V2_MetaFunction } from '@remix-run/node'
+import { Form } from '@remix-run/react'
 import { Button, Text } from '../components'
 import { auth } from '~/auth/auth.server'
 import { Layout } from '~/layout'
-import { Form } from '@remix-run/react'
 
 export const meta: V2_MetaFunction = () => {
   return [{ title: 'MarcheRunner' }]
 }
 
-export const loader = async ({ request }: LoaderArgs) => {
-  const authData = await auth.isAuthenticated(request)
-  if (authData) redirect('/dashboard')
-  return null
-}
 export const action = async ({ request }: ActionArgs) => {
   return auth.authenticate('auth0', request)
 }
@@ -21,7 +15,7 @@ export const action = async ({ request }: ActionArgs) => {
 export default function Index() {
   return (
     <Layout>
-      <section className="hero">
+      <section className="bg-hero bg-cover bg-center bg-no-repeat h-[65vh]">
         <div className="container py-10">
           <h1 className="text-6xl italic text-white my-6">MarchéRunner</h1>
           <Text className="leading-8" color="white" variant="body-copy">
@@ -32,12 +26,12 @@ export default function Index() {
           <Text className="leading-8" color="white" variant="body-copy-small">
             Already have an account?{' '}
             <Form className="inline" action="/auth/auth0" method="post">
-              <button
-                className="text-sm font-semibold text-runnerOrange hover:underline hover:cursor-pointer italic"
+              <Button
+                className="text-runnerOrange italic hover:underline font-semibold"
+                label="Sign in"
+                plain
                 type="submit"
-              >
-                Sign in
-              </button>
+              />
             </Form>
           </Text>
         </div>

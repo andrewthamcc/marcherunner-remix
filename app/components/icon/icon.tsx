@@ -37,11 +37,7 @@ interface IconProps {
   icon: IconVariants
 }
 
-export const Icon: React.FC<IconProps> = ({
-  className,
-  color = 'gray',
-  icon,
-}) => {
+export const Icon = ({ className, color = 'gray', icon }: IconProps) => {
   const SVG = iconVariants[icon]
 
   const iconColor = clsx(
@@ -55,7 +51,7 @@ export const Icon: React.FC<IconProps> = ({
     <div
       className={`${
         className ? className : ''
-      } flex items-center justify-center h-8 w-8 ${iconColor}`}
+      } flex items-center justify-center ${iconColor}`}
     >
       {SVG}
     </div>

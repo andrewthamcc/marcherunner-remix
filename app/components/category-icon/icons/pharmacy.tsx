@@ -1,11 +1,6 @@
 const Pharmacy = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="48"
-      height="48"
-      viewBox="0 0 48 48"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
       <path
         fill="#CE9402"
         d="M23,11.5c0-3-1-5.896-1-7s2,0,2,0s2-1.104,2,0s-1,4-1,7"

@@ -24,7 +24,11 @@ module.exports = {
       indigo: colors.indigo,
       yellow: colors.yellow,
     },
-    extend: {},
+    extend: {
+      backgroundImage: {
+        hero: "linear-gradient(to bottom right, rgba(0, 0, 0, 0.7) 60%, rgba(24, 188, 51, 0.4)), url('/assets/grocery.jpg');",
+      },
+    },
   },
   plugins: [],
 }

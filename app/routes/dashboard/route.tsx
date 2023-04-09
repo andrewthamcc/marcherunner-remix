@@ -2,7 +2,8 @@ import { Suspense } from 'react'
 import { defer, redirect } from '@remix-run/node'
 import type { LoaderArgs } from '@remix-run/node'
 import { Await, useAsyncError, useLoaderData } from '@remix-run/react'
-import { LoadingSpinner } from '../components'
+import { LoadingSpinner, Text } from '../../components'
+import { ShoppingList } from './components'
 import { auth } from '~/auth/auth.server'
 import { getCategories } from '~/models/grocery-category'
 import { getItems } from '~/models/items'
@@ -26,12 +27,20 @@ export default function Dashboard() {
   const { data } = useLoaderData()
 
   return (
-    <Suspense fallback={<LoadingSpinner />}>
+    <Suspense
+      fallback={
+        <Layout>
+          <div className="flex grow items-center justify-center">
+            <LoadingSpinner />
+          </div>
+        </Layout>
+      }
+    >
       <Await errorElement={<ErrorEl />} resolve={data}>
         {([categories, items]) => {
           return (
             <Layout isAuthenticated>
-              <h1>Dashboard!</h1>
+              <ShoppingList categories={categories} items={items} />
             </Layout>
           )
         }}

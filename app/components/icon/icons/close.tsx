@@ -1,11 +1,6 @@
 const Close = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="19"
-      viewBox="0 0 18 19"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 19">
       <g>
         <path
           d="M 14.66,14.24

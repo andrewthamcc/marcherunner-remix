@@ -1,6 +1,5 @@
 import { Form, Link } from '@remix-run/react'
 import { Button } from '../../components'
-// import Runner from './assets/runner.svg'
 
 interface HeaderProps {
   isAuthenticated?: boolean
@@ -42,7 +41,7 @@ export const Header = ({ isAuthenticated = false }: HeaderProps) => {
           method="post"
         >
           <Button
-            border={false}
+            border
             color="orange"
             label={isAuthenticated ? 'Logout' : 'Sign in'}
             type="submit"

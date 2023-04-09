@@ -41,8 +41,8 @@ export interface SymbolProps {
   symbol: SymbolVariants // symbol
 }
 
-export const Symbol: React.FC<SymbolProps> = ({ className, symbol }) => {
+export const Symbol = ({ className, symbol }: SymbolProps) => {
   const SVG = symbolVariants[symbol]
 
-  return <div className={`${className ? className : ''}`}>{SVG}</div>
+  return <div className={`${className ? className : ''} h-6 w-6`}>{SVG}</div>
 }

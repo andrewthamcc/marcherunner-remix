@@ -1,12 +1,7 @@
 const AddGreen = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-    >
-      <g fill="none" fill-rule="evenodd">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
+      <g fill="none" fillRule="evenodd">
         <circle cx="9" cy="9" r="9" fill="#18bc33" />
         <rect
           width="8"
@@ -14,7 +9,7 @@ const AddGreen = () => {
           x="5"
           y="8"
           fill="#fff"
-          fill-rule="nonzero"
+          fillRule="nonzero"
           rx=".5"
         />
         <rect
@@ -23,7 +18,7 @@ const AddGreen = () => {
           x="5"
           y="8"
           fill="#fff"
-          fill-rule="nonzero"
+          fillRule="nonzero"
           rx=".5"
           transform="rotate(90 9 9)"
         />

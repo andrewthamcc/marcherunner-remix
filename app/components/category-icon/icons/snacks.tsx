@@ -16,16 +16,16 @@ const Snacks = () => {
       <path
         fill="#f44336"
         stroke="#f44336"
-        stroke-miterlimit="10"
+        strokeMiterlimit="10"
         strokeWidth="2"
         d="M14.308 41.962L32.615 41.962"
       ></path>
       <path
         fill="none"
         stroke="#ffb829"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-miterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeMiterlimit="10"
         strokeWidth="2"
         d="M32.733,12.639c-0.536-1.306-1.82-2.226-3.319-2.226c-0.509,0-0.991,0.109-1.429,0.3c-0.539-1.562-2.006-2.691-3.751-2.691 c-2.201,0-3.985,1.784-3.985,3.985c0,0.017,0.005,0.033,0.005,0.05c-0.507-0.521-1.213-0.847-1.998-0.847 c-1.038,0-1.943,0.567-2.424,1.408"
       ></path>

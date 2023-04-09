@@ -6,7 +6,7 @@ const meta: Meta<typeof Symbol> = {
   component: Symbol,
 }
 export default meta
-export const symbols: React.FC = () => {
+export const symbols = () => {
   return (
     <div
       style={{

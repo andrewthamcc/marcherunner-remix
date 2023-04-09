@@ -1,6 +1,6 @@
-import React, { forwardRef, useImperativeHandle, useRef, useState } from 'react'
-import { Text } from '../text'
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react'
 import clsx from 'clsx'
+import { Text } from '../text'
 
 export interface TextInputProps {
   autofocus?: boolean

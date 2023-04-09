@@ -12,7 +12,7 @@ export interface RadioButtonProps {
   value: string | number
 }
 
-export const RadioButton: React.FC<RadioButtonProps> = ({
+export const RadioButton = ({
   checked,
   className,
   disabled = false,
@@ -21,7 +21,7 @@ export const RadioButton: React.FC<RadioButtonProps> = ({
   label,
   onChange,
   value,
-}) => {
+}: RadioButtonProps) => {
   return (
     <div className={`flex items-center  ${className ? className : ''}`}>
       <input

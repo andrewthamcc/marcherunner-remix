@@ -1,17 +1,12 @@
 const Selected = () => {
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="18"
-      height="18"
-      viewBox="0 0 18 18"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
       <circle
         cx="9"
         cy="9"
         r="8.5"
         fill="#FFF"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         stroke="#18bc33"
       />
       <circle cx="9" cy="9" r="6" fill="#18bc33" stroke="#18bc33" />

@@ -55,11 +55,7 @@ interface CategoryIconProps {
 
 export const CategoryIcon = ({ className, icon }: CategoryIconProps) => {
   return (
-    <div
-      className={`${
-        className ? className : ''
-      } flex items-center justify-center h-7 w-7`}
-    >
+    <div className={`${className ? className : ''}`}>
       {categoryVariants[icon]}
     </div>
   )

@@ -7,6 +7,7 @@ export interface ButtonProps {
   className?: string
   color?: 'green' | 'orange'
   disabled?: boolean
+  fullWidth?: boolean
   label: string
   plain?: boolean
   onClick?: () => void
@@ -21,6 +22,7 @@ export const Button = ({
   className = '',
   color = 'green',
   disabled = false,
+  fullWidth = false,
   label,
   plain = false,
   onClick,
@@ -31,24 +33,23 @@ export const Button = ({
 
   const buttonStyles = clsx(
     plain
-      ? 'bg-transparent border-transparent hover:bg-transparent active:bg-transparent !text-black'
-      : 'text-white',
+      ? 'bg-transparent !p-0 hover:bg-transparent active:bg-transparent'
+      : 'px-8 py-1 rounded-full focus:outline-none ease-in duration-200 text-white',
     color === 'green' &&
       'bg-runnerGreen hover:bg-runnerGreen-light active:bg-runnerGreen-dark',
     color === 'orange' &&
       'bg-runnerOrange hover:bg-runnerOrange-light active:bg-runnerOrange-dark',
-    !border && 'border-2 border-slate-700',
-    disabled && '!bg-gray-400'
+    border && 'border-2 border-slate-700',
+    disabled && !plain && '!bg-gray-400'
   )
 
   return (
     <button
       aria-label={a11ylabel}
-      className={`${className} ${buttonStyles} px-8 py-1 rounded-full focus:outline-none ease-in duration-200`}
+      className={`${className} ${buttonStyles}`}
       disabled={disabled}
-      name={label}
       onClick={onClick}
-      style={{ width: calcWidth }}
+      style={{ width: fullWidth ? '100%' : calcWidth }}
       type={type}
     >
       {children}

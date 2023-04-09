@@ -11,7 +11,7 @@ export interface CheckboxProps {
   onChange: () => void // change handler
 }
 
-export const Checkbox: React.FC<CheckboxProps> = ({
+export const Checkbox = ({
   checked,
   className,
   disabled = false,
@@ -19,7 +19,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
   name,
   label,
   onChange,
-}) => {
+}: CheckboxProps) => {
   const labelStyle = clsx(checked && 'italic text-gray-400 line-through')
 
   return (
@@ -35,7 +35,7 @@ export const Checkbox: React.FC<CheckboxProps> = ({
       />
       <div onClick={onChange}>
         <Symbol
-          className="[&>svg]:w-[14px] [&>svg]:h-[14px]"
+          className="w-3.5 h-3.5"
           symbol={checked ? 'checkmark' : 'unselected'}
         />
       </div>
