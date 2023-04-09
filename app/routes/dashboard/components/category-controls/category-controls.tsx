@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react'
 import type { ElementRef } from 'react'
-import { Form } from '@remix-run/react'
+import { useFetcher } from '@remix-run/react'
 import {
   Button,
   CategoryIcon,
@@ -24,6 +24,8 @@ export const CategoryControls = ({ category }: Props) => {
   const [itemName, setItemName] = useState('')
   const itemInput = useRef<InputHandle>(null)
 
+  const fetcher = useFetcher()
+
   return (
     <div className="py-2">
       {!isEditing ? (
@@ -45,11 +47,10 @@ export const CategoryControls = ({ category }: Props) => {
           <Symbol className="w-3.5 h-3.5 ml-auto" symbol="add orange" />
         </Button>
       ) : (
-        <Form
+        <fetcher.Form
           className="flex items-center gap-2"
           action="/item/create"
           method="post"
-          reloadDocument
         >
           <CategoryIcon
             className="h-8 w-8"
@@ -90,7 +91,7 @@ export const CategoryControls = ({ category }: Props) => {
               setIsEditing(false)
             }}
           />
-        </Form>
+        </fetcher.Form>
       )}
     </div>
   )

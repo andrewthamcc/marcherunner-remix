@@ -7,6 +7,11 @@ interface Item {
   userId: string
 }
 
+export const getItem = async (itemId: string, token: string) => {
+  await hasPermission('read:items', token)
+  return prisma.item.findUnique({ where: { id: itemId } })
+}
+
 export const getItems = async (token: string) => {
   const userId = await hasPermission('read:items', token)
   return prisma.item.findMany({ where: { userId } })
