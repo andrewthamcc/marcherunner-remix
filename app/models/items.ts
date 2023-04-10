@@ -17,6 +17,16 @@ export const getItems = async (token: string) => {
   return prisma.item.findMany({ where: { userId } })
 }
 
+export const getCategoryItems = async (categoryName: string, token: string) => {
+  const userId = await hasPermission('read:items', token)
+
+  const category = await prisma.groceryCategory.findUnique({
+    where: { categoryName },
+  })
+
+  return prisma.item.findMany({ where: { userId, categoryId: category?.id } })
+}
+
 export const createItem = async (item: Item, token: string) => {
   await hasPermission('create:item', token)
   const { name, categoryId, userId } = item

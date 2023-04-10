@@ -1,4 +1,4 @@
-import type { CategoryVariants } from '~/components'
+import type { CategoryVariants } from './ui'
 
 export interface Item {
   readonly id: string

@@ -35,25 +35,29 @@ interface IconProps {
   className?: string
   color?: 'green' | 'orange' | 'red' | 'gray'
   icon: IconVariants
+  size?: 'small' | 'medium' | 'large'
 }
 
-export const Icon = ({ className, color = 'gray', icon }: IconProps) => {
-  const SVG = iconVariants[icon]
-
-  const iconColor = clsx(
+export const Icon = ({
+  className,
+  color = 'gray',
+  icon,
+  size = 'medium',
+}: IconProps) => {
+  const iconStyle = clsx(
+    size === 'small' && 'h-3.5 w-3.5',
+    size === 'medium' && 'h-6 w-6',
+    size === 'medium' && 'h-6 w-6',
     color === 'green' && '[&>svg]:fill-runnerGreen',
     color === 'orange' && '[&>svg]:fill-runnerOrange',
     color === 'red' && '[&>svg]:fill-red-500',
-    color === 'gray' && '[&>svg]:fill-gray-400'
+    color === 'gray' && '[&>svg]:fill-gray-400',
+    ' flex items-center justify-center'
   )
 
   return (
-    <div
-      className={`${
-        className ? className : ''
-      } flex items-center justify-center ${iconColor}`}
-    >
-      {SVG}
+    <div className={`${className ? className : ''}  ${iconStyle}`}>
+      {iconVariants[icon]}
     </div>
   )
 }

@@ -9,8 +9,8 @@ import {
   TextInput,
   Text,
   LoadingSpinner,
-} from '../../../../components'
-import type { CategoryVariants } from '../../../../components'
+} from '../../ui'
+import type { CategoryVariants } from '../../ui'
 import type { Category } from '../../types'
 import { getCategoryTitle } from '~/utils/get-category-title'
 

@@ -21,7 +21,7 @@ export const DropdownItem = ({ item, onChange }: Props) => {
     >
       <button
         aria-label={`Select ${item.label}`}
-        className="grow flex"
+        className="flex items-center gap-2"
         onClick={() => onChange(item)}
       >
         {item.icon}

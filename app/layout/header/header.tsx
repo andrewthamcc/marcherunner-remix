@@ -1,5 +1,5 @@
 import { Form, Link } from '@remix-run/react'
-import { Button } from '../../components'
+import { Button } from '../../ui'
 
 interface HeaderProps {
   isAuthenticated?: boolean

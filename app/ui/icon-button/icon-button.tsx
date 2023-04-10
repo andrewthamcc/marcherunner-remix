@@ -39,6 +39,7 @@ export const IconButton = ({
           size === 'medium' && 'w-6 h-6',
           size === 'large' && 'w-10 h-10'
         )}
+        size={size}
         color={disabled ? 'gray' : color}
         icon={icon}
       />

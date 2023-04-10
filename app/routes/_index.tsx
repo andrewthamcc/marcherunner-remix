@@ -1,7 +1,7 @@
 import type { ActionArgs, V2_MetaFunction } from '@remix-run/node'
 import { Form } from '@remix-run/react'
-import { Button, Text } from '../components'
 import { auth } from '~/auth/auth.server'
+import { Button, Text } from '~/ui'
 import { Layout } from '~/layout'
 
 export const meta: V2_MetaFunction = () => {
@@ -39,7 +39,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="container lg:flex py-10">
+      <section className="container lg:flex gap-4 py-10">
         <div>
           <h3 className="font-bold italic text-4xl mb-10">How it works...</h3>
           <Text className="leading-8" variant="body-copy">

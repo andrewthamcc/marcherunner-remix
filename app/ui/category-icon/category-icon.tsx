@@ -55,7 +55,7 @@ interface CategoryIconProps {
 
 export const CategoryIcon = ({ className, icon }: CategoryIconProps) => {
   return (
-    <div className={`${className ? className : ''}`}>
+    <div className={`${className ? className : 'w-6 h-6'}`}>
       {categoryVariants[icon]}
     </div>
   )

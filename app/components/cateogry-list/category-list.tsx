@@ -1,7 +1,7 @@
 import clsx from 'clsx'
-import type { Item, Category } from '../../types'
-import { Text } from '../../../../components'
-import { CategoryControls, CategoryItem } from '..'
+import { CategoryControls, CategoryItem } from './components'
+import type { Item, Category } from '~/types'
+import { Text } from '~/ui'
 
 interface CategoryListProps {
   category: Category

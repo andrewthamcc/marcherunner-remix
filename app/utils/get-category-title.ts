@@ -1,4 +1,4 @@
-import { CategoryVariants } from '../components'
+import { CategoryVariants } from '../ui'
 
 const categoryTiles: Record<CategoryVariants, string> = {
   all: 'All',
