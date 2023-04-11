@@ -9,9 +9,9 @@ import {
   TextInput,
   Text,
   LoadingSpinner,
-} from '../../ui'
-import type { CategoryVariants } from '../../ui'
-import type { Category } from '../../types'
+} from '~/ui'
+import type { CategoryVariants } from '~/ui'
+import type { Category } from '~/types'
 import { getCategoryTitle } from '~/utils/get-category-title'
 
 interface Props {

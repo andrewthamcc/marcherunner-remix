@@ -65,7 +65,7 @@ const TextInputWithRef: React.ForwardRefRenderFunction<
   }
 
   const inputStyles = clsx(
-    errors ? 'border-red-500' : 'border-slate-700',
+    errors ? 'border-red-500' : 'border-slate-300',
     disabled
       ? 'text-gray-400'
       : 'text-black focus:border-runnerGreen active:border-runnerGreen'

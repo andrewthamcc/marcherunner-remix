@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import { useFetcher } from '@remix-run/react'
-import { Checkbox, IconButton } from '../../../../ui'
-import type { Item } from '../../../../types'
+import { Checkbox, IconButton } from '~/ui'
+import type { Item } from '~/types'
 
 interface CategoryItemProps {
   item: Item

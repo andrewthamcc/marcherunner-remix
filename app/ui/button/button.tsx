@@ -39,7 +39,7 @@ export const Button = ({
       'bg-runnerGreen hover:bg-runnerGreen-light active:bg-runnerGreen-dark',
     color === 'orange' &&
       'bg-runnerOrange hover:bg-runnerOrange-light active:bg-runnerOrange-dark',
-    border && 'border-2 border-slate-700',
+    border && 'border-2 border-slate-300',
     disabled && !plain && '!bg-gray-400'
   )
 

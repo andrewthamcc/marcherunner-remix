@@ -42,7 +42,7 @@ export const DropdownList = ({
 
   const dropdownList = (
     <ul
-      className="box-content rounded-lg border-2 border-slate-700 bg-white shadow-xl absolute flex flex-col items-center justify-center py-2"
+      className="box-content rounded-lg border-2 border-slate-300 bg-white shadow-xl absolute flex flex-col items-center justify-center"
       style={style}
     >
       {list.map((item, index) => (

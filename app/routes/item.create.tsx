@@ -1,4 +1,3 @@
-import { json, redirect } from '@remix-run/node'
 import type { ActionArgs } from '@remix-run/node'
 import { auth } from '~/auth/auth.server'
 import { createItem } from '~/models/items'
@@ -9,12 +8,11 @@ export const action = async ({ request }: ActionArgs) => {
   const name = formData.get('name')
   const categoryId = formData.get('categoryId')
 
-  if (typeof name !== 'string' || typeof categoryId !== 'string') {
+  if (typeof name !== 'string' || typeof categoryId !== 'string')
     throw new Error('Invalid form data')
-  }
 
-  if (user) {
-    const item = await createItem(
+  if (user)
+    return await createItem(
       {
         name,
         categoryId,
@@ -22,9 +20,6 @@ export const action = async ({ request }: ActionArgs) => {
       },
       user.token
     )
-
-    return item
-  }
 
   throw new Error('Please authenticate')
 }

@@ -4,13 +4,10 @@ import { auth } from '~/auth/auth.server'
 import { Button, Text } from '~/ui'
 import { Layout } from '~/layout'
 
-export const meta: V2_MetaFunction = () => {
-  return [{ title: 'MarcheRunner' }]
-}
+export const meta: V2_MetaFunction = () => [{ title: 'MarcheRunner' }]
 
-export const action = async ({ request }: ActionArgs) => {
-  return auth.authenticate('auth0', request)
-}
+export const action = async ({ request }: ActionArgs) =>
+  auth.authenticate('auth0', request)
 
 export default function Index() {
   return (

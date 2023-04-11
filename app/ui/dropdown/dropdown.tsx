@@ -73,7 +73,7 @@ export const Dropdown = ({
         onClick={() => setIsOpen(!isOpen)}
       >
         <div
-          className="border-2 border-slate-700 rounded-lg content-box ease-in duration-100 flex items-center px-2 py-1"
+          className="border-2 border-slate-300 rounded-lg ease-in duration-100 flex items-center px-2 py-1"
           style={{
             borderColor: isOpen ? '#18bc33' : disabled ? 'undefined' : '',
           }}

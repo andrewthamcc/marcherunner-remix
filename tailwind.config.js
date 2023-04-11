@@ -20,9 +20,7 @@ module.exports = {
       white: colors.white,
       gray: colors.gray,
       red: colors.red,
-      emerald: colors.emerald,
-      indigo: colors.indigo,
-      yellow: colors.yellow,
+      slate: colors.slate,
     },
     extend: {
       backgroundImage: {
