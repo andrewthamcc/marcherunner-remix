@@ -30,7 +30,10 @@ export const authConfig = {
   clientId: process.env.REACT_APP_AUTH0_CLIENT_ID,
   clientSecret: process.env.REACT_APP_CLIENT_SECRET,
   domain: process.env.REACT_APP_AUTH0_DOMAIN,
-  logout: process.env.REACT_APP_LOGOUT,
+  logout:
+    process.env.NODE_ENV === 'development'
+      ? process.env.REACT_APP_LOGOUT_DEV
+      : process.env.REACT_APP_LOGOUT,
   secret: process.env.SECRET,
 } as AuthConfig
 

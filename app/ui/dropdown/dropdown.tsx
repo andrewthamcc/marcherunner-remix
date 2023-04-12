@@ -63,7 +63,7 @@ export const Dropdown = ({
       style={{ width: `${width}px` }}
     >
       {!!label && (
-        <label className="w-100 text-sm mb-1 text-left">{label}</label>
+        <label className="w-100 ml-1 mb-1 text-xs text-left">{label}</label>
       )}
       <button
         aria-label="Category Filter"

@@ -10,17 +10,6 @@ const client = jwksClient({
   jwksUri: jwksURL,
 })
 
-type CallBack = <X, Y>(a: X, b: Y) => void
-
-async function getKey(header: JwtHeader, callback: CallBack) {
-  try {
-    const key = await client.getSigningKey(header.kid)
-    callback(null, key.getPublicKey())
-  } catch (error) {
-    return error
-  }
-}
-
 export const isTokenValid = (token: string): Promise<string | JwtPayload> => {
   return new Promise((resolve, reject) => {
     if (!token) {
@@ -29,7 +18,14 @@ export const isTokenValid = (token: string): Promise<string | JwtPayload> => {
 
     jwt.verify(
       token,
-      getKey as unknown as CallBack,
+      async (header: JwtHeader, cb) => {
+        try {
+          const key = await client.getSigningKey(header.kid)
+          cb(null, key.getPublicKey())
+        } catch (error) {
+          return error
+        }
+      },
       {
         audience: process.env.AUTH0_AUDIENCE,
         issuer: process.env.AUTH0_ISSUER,

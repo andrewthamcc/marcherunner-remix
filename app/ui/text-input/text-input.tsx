@@ -68,12 +68,16 @@ const TextInputWithRef: React.ForwardRefRenderFunction<
     errors ? 'border-red-500' : 'border-slate-300',
     disabled
       ? 'text-gray-400'
-      : 'text-black focus:border-runnerGreen active:border-runnerGreen'
+      : 'focus:border-runnerGreen active:border-runnerGreen'
   )
 
   return (
     <div className={`m2 relative flex flex-col ${className ? className : ''}`}>
-      {label && <label htmlFor={id}>{label}</label>}
+      {label && (
+        <label className="ml-1 mb-1 text-xs font-semibold" htmlFor={id}>
+          {label}
+        </label>
+      )}
       <input
         autoFocus={autofocus}
         className={`border-2 ${inputStyles} rounded-lg px-2 py-1 focus:outline-none ease-in duration-100 text-sm`}

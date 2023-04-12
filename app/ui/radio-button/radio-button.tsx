@@ -40,7 +40,7 @@ export const RadioButton = ({
           symbol={checked ? 'selected' : 'unselected'}
         />
       </div>
-      <label htmlFor={id} className="ml-1 text-sm">
+      <label htmlFor={id} className="ml-1 text-xs font-semibold">
         {label}
       </label>
     </div>

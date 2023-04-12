@@ -44,19 +44,20 @@ export const Icon = ({
   icon,
   size = 'medium',
 }: IconProps) => {
-  const iconStyle = clsx(
-    size === 'small' && 'h-3.5 w-3.5',
-    size === 'medium' && 'h-6 w-6',
-    size === 'medium' && 'h-6 w-6',
-    color === 'green' && '[&>svg]:fill-runnerGreen',
-    color === 'orange' && '[&>svg]:fill-runnerOrange',
-    color === 'red' && '[&>svg]:fill-red-500',
-    color === 'gray' && '[&>svg]:fill-gray-400',
-    ' flex items-center justify-center'
-  )
-
   return (
-    <div className={`${className ? className : ''}  ${iconStyle}`}>
+    <div
+      className={clsx(
+        size === 'small' && 'h-3.5 w-3.5',
+        size === 'medium' && 'h-6 w-6',
+        size === 'medium' && 'h-6 w-6',
+        color === 'green' && '[&>svg]:fill-runnerGreen',
+        color === 'orange' && '[&>svg]:fill-runnerOrange',
+        color === 'red' && '[&>svg]:fill-red-500',
+        color === 'gray' && '[&>svg]:fill-gray-400',
+        className && className,
+        'flex items-center justify-center'
+      )}
+    >
       {iconVariants[icon]}
     </div>
   )

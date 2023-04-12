@@ -6,6 +6,7 @@ import {
   Outlet,
   useFetcher,
   useLoaderData,
+  useLocation,
   useNavigate,
   useParams,
 } from '@remix-run/react'
@@ -38,6 +39,7 @@ export default function Component() {
   const { category } = useParams()
   const fetcher = useFetcher()
   const navigate = useNavigate()
+  const { pathname } = useLocation()
 
   const dropdownList = (categories as Category[])
     .map((c) => ({
@@ -62,11 +64,11 @@ export default function Component() {
         </Layout>
       }
     >
-      <Await errorElement={<p>uh oh</p>} resolve={items}>
+      <Await errorElement={<p>oh no</p>} resolve={items}>
         {(items: Item[]) => (
           <Layout isAuthenticated>
-            <div className="container flex items-center my-8">
-              {dropdownList && selectedCategory && (
+            <div className="container flex gap-4 items-center justify-between my-8">
+              {selectedCategory && (
                 <Dropdown
                   list={dropdownList}
                   onChange={(category) => {
@@ -79,10 +81,12 @@ export default function Component() {
                     navigate(`/dashboard/${category.value}`)
                   }}
                   value={selectedCategory}
+                  listWidth={window.screen.width < 600 ? 225 : undefined}
+                  width={window.screen.width < 600 ? 225 : undefined}
                 />
               )}
 
-              {!category && (
+              {pathname === '/dashboard' && (
                 <div className="flex items-center gap-2">
                   <fetcher.Form action="/clear/purchased" method="post">
                     <IconButton
@@ -91,7 +95,7 @@ export default function Component() {
                       disabled={!(items.filter((i) => i.purchased).length > 0)}
                       icon="checkout cart"
                       submit
-                      size="medium"
+                      size="large"
                     />
                   </fetcher.Form>
 
@@ -102,7 +106,7 @@ export default function Component() {
                       disabled={items.length === 0}
                       icon="clear cart"
                       submit
-                      size="medium"
+                      size="large"
                     />
                   </fetcher.Form>
                 </div>

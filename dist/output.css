@@ -569,12 +569,20 @@ svg {
   position: relative;
 }
 
+.bottom-1 {
+  bottom: 0.25rem;
+}
+
 .bottom-\[-6px\] {
   bottom: -6px;
 }
 
 .left-\[16px\] {
   left: 16px;
+}
+
+.right-1 {
+  right: 0.25rem;
 }
 
 .order-last {
@@ -586,6 +594,11 @@ svg {
   margin-bottom: 1.5rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -594,12 +607,28 @@ svg {
   margin-bottom: 2.5rem;
 }
 
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
 .ml-1 {
   margin-left: 0.25rem;
 }
 
+.ml-auto {
+  margin-left: auto;
+}
+
 .mr-2 {
   margin-right: 0.5rem;
+}
+
+.mt-2 {
+  margin-top: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
 }
 
 .box-content {
@@ -630,8 +659,36 @@ svg {
   height: 2.5rem;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
+.h-3\.5 {
+  height: 0.875rem;
+}
+
+.h-4 {
+  height: 1rem;
+}
+
+.h-5 {
+  height: 1.25rem;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.h-8 {
+  height: 2rem;
+}
+
 .h-\[25px\] {
   height: 25px;
+}
+
+.h-\[50vh\] {
+  height: 50vh;
 }
 
 .h-full {
@@ -648,6 +705,30 @@ svg {
 
 .w-10 {
   width: 2.5rem;
+}
+
+.w-3 {
+  width: 0.75rem;
+}
+
+.w-3\.5 {
+  width: 0.875rem;
+}
+
+.w-4 {
+  width: 1rem;
+}
+
+.w-5 {
+  width: 1.25rem;
+}
+
+.w-6 {
+  width: 1.5rem;
+}
+
+.w-8 {
+  width: 2rem;
 }
 
 .w-\[25px\] {
@@ -700,6 +781,10 @@ svg {
   gap: 1rem;
 }
 
+.gap-y-20 {
+  row-gap: 5rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -719,6 +804,11 @@ svg {
 .border-red-500 {
   --tw-border-opacity: 1;
   border-color: rgb(239 68 68 / var(--tw-border-opacity));
+}
+
+.border-slate-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(203 213 225 / var(--tw-border-opacity));
 }
 
 .\!bg-gray-400 {
@@ -745,8 +835,20 @@ svg {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-\[url\(\'\.\.\/public\/assets\/images\/banner\.svg\'\)\] {
-  background-image: url('../public/assets/images/banner.svg');
+.bg-hero {
+  background-image: linear-gradient(to bottom right, rgba(0, 0, 0, 0.7) 60%, rgba(24, 188, 51, 0.4)), url('/assets/grocery.jpg');;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.bg-center {
+  background-position: center;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .fill-white {
@@ -769,11 +871,6 @@ svg {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
-}
-
-.px-6 {
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
 }
 
 .px-8 {
@@ -823,8 +920,8 @@ svg {
   line-height: 2.5rem;
 }
 
-.text-6xl {
-  font-size: 3.75rem;
+.text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 
@@ -926,6 +1023,16 @@ svg {
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
+.first-of-type\:rounded-t-lg:first-of-type {
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+}
+
+.last-of-type\:rounded-b-lg:last-of-type {
+  border-bottom-right-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+
 .hover\:bg-runnerGreen-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(27 211 57 / var(--tw-bg-opacity));
@@ -934,6 +1041,11 @@ svg {
 .hover\:bg-runnerOrange-light:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(237 153 44 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-slate-50:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(248 250 252 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-transparent:hover {
@@ -971,6 +1083,38 @@ svg {
 
 .active\:bg-transparent:active {
   background-color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .lg\:order-none {
+    order: 0;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:h-\[65vh\] {
+    height: 65vh;
+  }
+
+  .lg\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .lg\:flex-row {
+    flex-direction: row;
+  }
+
+  .lg\:gap-x-8 {
+    -moz-column-gap: 2rem;
+         column-gap: 2rem;
+  }
+
+  .lg\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
 }
 
 .\[\&\>svg\]\:h-\[14px\]>svg {
