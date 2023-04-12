@@ -105,9 +105,10 @@ export default function Component() {
                     />
                     <p
                       className={clsx(
-                        !(items.filter((i) => i.purchased).length > 0) &&
-                          'text-gray-500',
-                        'text-center text-[6px] font-semibold text-runnerGreen'
+                        !(items.filter((i) => i.purchased).length > 0)
+                          ? 'text-gray-500'
+                          : 'text-runnerGreen',
+                        'text-center text-[6px] font-semibold'
                       )}
                     >
                       Clear Purchased
@@ -130,8 +131,8 @@ export default function Component() {
                     />
                     <p
                       className={clsx(
-                        items.length === 0 && 'text-gray-500',
-                        'text-center text-[6px] font-semibold text-red-500'
+                        items.length === 0 ? 'text-gray-500' : 'text-red-500',
+                        'text-center text-[6px] font-semibold'
                       )}
                     >
                       Empty Cart
