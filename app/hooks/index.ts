@@ -1,3 +1,2 @@
-export * from './use-debounce'
-export * from './use-modal'
-export * from './use-outside-click'
+export { useDebounce } from './use-debounce'
+export { useOutsideClick } from './use-outside-click'

@@ -1,1 +1,1 @@
-export * from './category-controls'
+export { CategoryControls } from './category-controls'

@@ -1,1 +1,1 @@
-export * from './category-icon'
+export { CategoryIcon } from './category-icon'

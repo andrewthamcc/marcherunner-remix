@@ -11,7 +11,7 @@ export const CategoryItem = ({ item }: CategoryItemProps) => {
   const fetcher = useFetcher()
   const isDeleting = fetcher?.submission?.method === 'DELETE'
   const isUpdating =
-    fetcher?.submission?.method === 'PUT' && fetcher.state === 'submitting'
+    fetcher.formMethod === 'PUT' && fetcher.state === 'submitting'
 
   return (
     <li

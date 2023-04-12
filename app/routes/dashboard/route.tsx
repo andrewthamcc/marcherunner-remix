@@ -1,4 +1,5 @@
 import { Suspense, useEffect, useState } from 'react'
+import clsx from 'clsx'
 import { defer, redirect } from '@remix-run/node'
 import type { LoaderArgs } from '@remix-run/node'
 import {
@@ -42,6 +43,7 @@ export default function Component() {
   const { pathname } = useLocation()
 
   const dropdownList = (categories as Category[])
+    .filter((c) => c.categoryName !== 'list')
     .map((c) => ({
       icon: <CategoryIcon icon={c.categoryName as CategoryVariants} />,
       label: getCategoryTitle(c.categoryName as CategoryVariants),
@@ -87,8 +89,12 @@ export default function Component() {
               )}
 
               {pathname === '/dashboard' && (
-                <div className="flex items-center gap-2">
-                  <fetcher.Form action="/clear/purchased" method="post">
+                <div className="flex items-center gap-4">
+                  <fetcher.Form
+                    className="flex flex-col items-center justify-center"
+                    action="/clear/purchased"
+                    method="post"
+                  >
                     <IconButton
                       a11ylabel="delete purchased items"
                       color="green"
@@ -97,10 +103,24 @@ export default function Component() {
                       submit
                       size="large"
                     />
+                    <p
+                      className={clsx(
+                        !(items.filter((i) => i.purchased).length > 0) &&
+                          'text-gray-500',
+                        'text-center text-[6px] font-semibold text-runnerGreen'
+                      )}
+                    >
+                      Clear Purchased
+                    </p>
                   </fetcher.Form>
 
-                  <fetcher.Form action="/clear/all" method="post">
+                  <fetcher.Form
+                    className="flex flex-col items-center justify-center"
+                    action="/clear/all"
+                    method="post"
+                  >
                     <IconButton
+                      className="!mb-0"
                       a11ylabel="delete all items"
                       color="red"
                       disabled={items.length === 0}
@@ -108,6 +128,14 @@ export default function Component() {
                       submit
                       size="large"
                     />
+                    <p
+                      className={clsx(
+                        items.length === 0 && 'text-gray-500',
+                        'text-center text-[6px] font-semibold text-red-500'
+                      )}
+                    >
+                      Empty Cart
+                    </p>
                   </fetcher.Form>
                 </div>
               )}

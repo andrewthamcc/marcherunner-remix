@@ -1,2 +1,2 @@
-export * from './category-controls'
-export * from './category-item'
+export { CategoryControls } from './category-controls'
+export { CategoryItem } from './category-item'

@@ -1,1 +1,2 @@
-export * from './dropdown'
+export { Dropdown } from './dropdown'
+export type { DropItem } from './dropdown'

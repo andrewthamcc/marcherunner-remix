@@ -1,1 +1,1 @@
-export * from './symbol'
+export { Symbol } from './symbol'

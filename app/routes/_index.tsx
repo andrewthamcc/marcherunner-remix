@@ -1,5 +1,5 @@
 import type { ActionArgs, V2_MetaFunction } from '@remix-run/node'
-import { Form } from '@remix-run/react'
+import { useSubmit } from '@remix-run/react'
 import { auth } from '~/auth/auth.server'
 import { Button, Text } from '~/ui'
 import { Layout } from '~/layout'
@@ -10,6 +10,8 @@ export const action = async ({ request }: ActionArgs) =>
   auth.authenticate('auth0', request)
 
 export default function Index() {
+  const submit = useSubmit()
+
   return (
     <Layout>
       <section className="bg-hero bg-cover bg-center bg-no-repeat h-[50vh] lg:h-[65vh]">
@@ -24,14 +26,14 @@ export default function Index() {
 
           <Text className="leading-8" color="white" variant="body-copy-small">
             Already have an account?{' '}
-            <Form className="inline" action="/auth/auth0" method="post">
-              <Button
-                className="text-runnerOrange italic hover:underline font-semibold"
-                label="Sign in"
-                plain
-                type="submit"
-              />
-            </Form>
+            <Button
+              className="text-runnerOrange italic hover:underline font-semibold"
+              label="Sign in"
+              plain
+              onClick={() =>
+                submit(null, { method: 'POST', action: '/auth/auth0' })
+              }
+            />
           </Text>
         </div>
       </section>

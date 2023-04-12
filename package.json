@@ -5,7 +5,9 @@
     "build": "remix build",
     "dev": "remix dev",
     "typecheck": "tsc",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "npm run build-tailwind & npm run run:storybook",
+    "run:storybook": "storybook dev -p 6006",
+    "build-tailwind": "npx tailwindcss -i ./app/tailwind.css -o ./dist/output.css --watch",
     "build-storybook": "storybook build"
   },
   "prisma": {
